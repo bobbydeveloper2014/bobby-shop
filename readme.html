@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bobby-Shop README</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+        h1, h2, h3 { color: #333; }
+        code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        ul { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<h1>Bobby-Shop</h1>
+<p><strong>Trang web bán hàng bằng PHP đơn giản</strong><br>
+<strong>A simple PHP e-commerce web application</strong></p>
+
+<h2>Cấu trúc thư mục / Directory Structure</h2>
+<pre>
+bobby-shop/
+├─ index.php
+├─ config.php
+├─ assets/
+│  ├─ css/
+│  ├─ js/
+│  └─ images/
+├─ includes/
+├─ pages/
+└─ README.html
+</pre>
+
+<h2>Yêu cầu / Requirements</h2>
+<ul>
+    <li>PHP >= 7.4</li>
+    <li>MySQL hoặc MariaDB (nếu dùng database / if using database)</li>
+    <li>Apache hoặc Nginx</li>
+</ul>
+
+<h2>Cách chạy trên Apache / How to run on Apache</h2>
+<ol>
+    <li>Copy toàn bộ folder <code>bobby-shop</code> vào thư mục <code>htdocs</code> hoặc <code>www</code> (ví dụ: <code>C:/xampp/htdocs/bobby-shop</code>)<br>
+        Copy all <code>bobby-shop</code> folder to <code>htdocs</code> or <code>www</code> folder (e.g., <code>C:/xampp/htdocs/bobby-shop</code>)
+    </li>
+    <li>Mở trình duyệt và truy cập: <code>http://localhost/bobby-shop</code><br>
+        Open browser and visit: <code>http://localhost/bobby-shop</code>
+    </li>
+    <li>Nếu dùng database, chỉnh sửa file <code>config.php</code> với thông tin database.<br>
+        If using database, edit <code>config.php</code> with your database info.
+    </li>
+</ol>
+
+<h2>Cách chạy trên Nginx / How to run on Nginx</h2>
+<ol>
+    <li>Copy toàn bộ folder <code>bobby-shop</code> vào thư mục web root của Nginx (ví dụ: <code>/usr/share/nginx/html/bobby-shop</code>)<br>
+        Copy all <code>bobby-shop</code> folder to Nginx web root (e.g., <code>/usr/share/nginx/html/bobby-shop</code>)
+    </li>
+    <li>Chỉnh sửa cấu hình server block Nginx:</li>
+</ol>
+<pre>
+server {
+    listen 80;
+    server_name localhost;
+    root /usr/share/nginx/html/bobby-shop;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+    }
+}
+</pre>
+<ol start="3">
+    <li>Khởi động lại Nginx và PHP-FPM, sau đó truy cập <code>http://localhost/bobby-shop</code><br>
+        Restart Nginx and PHP-FPM, then visit <code>http://localhost/bobby-shop</code>
+    </li>
+</ol>
+
+<h2>Chú ý / Notes</h2>
+<ul>
+    <li>Đảm bảo PHP và server đã được cài đặt và chạy bình thường.</li>
+    <li>Make sure PHP and the web server are installed and running properly.</li>
+</ul>
+
+</body>
+</html>
