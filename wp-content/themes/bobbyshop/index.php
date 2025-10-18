@@ -243,9 +243,6 @@ if ($page_id) {
                 <li class="nav-item">
                     <a class="nav-link" href="?page_id=11">Account</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?page_id=418">Chat</a>
-                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="<?php echo esc_url(home_url('/')); ?>" method="GET">
                 <input class="form-control mr-sm-2" type="search" name="s" placeholder="Tìm kiếm sản phẩm..." aria-label="Tìm kiếm sản phẩm" value="<?php echo esc_attr($search_query); ?>">
@@ -772,22 +769,6 @@ function display_product_by_slug() {
             echo do_shortcode('[products]'); 
             ?>
         </div>
-    </div>
-    <!-- Cột quảng cáo bên phải -->
-    <div class="col-md-2">
-        <?php 
-        if ($_SERVER['REQUEST_URI'] == '/' || $_SERVER['REQUEST_URI'] == ''): 
-        ?>
-            <div class="d-flex justify-content-end">
-                <div class="sidebarad p-2 ms-auto">
-                <div style="background-color: #FFD700; width: 300px; height: 600px; display: flex; justify-content: center; align-items: center; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-                    <div style="writing-mode: vertical-rl; text-orientation: upright; font-size: 24px; font-weight: bold; text-align: center; color: #333; font-family: Arial, sans-serif;">
-                        Bobby Shop<br>Khai Trương
-                    </div>
-                </div>
-                </div>
-            </div>
-        <?php endif; ?>
     </div>
 </div>
 </div>

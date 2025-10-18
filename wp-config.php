@@ -1,6 +1,7 @@
 <?php
 define( 'WP_CACHE', true );
 
+
 /**
  * The base configuration for WordPress
  *
@@ -23,13 +24,13 @@ define( 'WP_CACHE', true );
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'u126376622_H99JQ' );
+define( 'DB_NAME', 'bobby-shop' );
 
 /** Database username */
 define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'nhim1234' );
+define( 'DB_PASSWORD', '' );
 
 /** Database hostname */
 define( 'DB_HOST', '127.0.0.1' );
@@ -90,10 +91,13 @@ $table_prefix = 'wp_';
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
 define( 'WP_DEBUG', true );  // Bật chế độ debug
-define( 'WP_DEBUG_LOG', true );  // Ghi lỗi vào file debug.log
+define( 'WP_DEBUG_LOG', false );  // Ghi lỗi vào file debug.log
 define( 'WP_DEBUG_DISPLAY', false );  // Hiển thị lỗi trên trang web
-define('WP_HOME', 'http://localhost/bobbyshop');
-define('WP_SITEURL', 'http://localhost/bobbyshop');
+$_SERVER['HTTPS'] = 'on'; // Gán luôn HTTPS là 'on'
+define('FORCE_SSL_ADMIN', true);
+define('FORCE_SSL_LOGIN', true);
+define('WP_HOME', 'https://bobby-shop.com');
+define('WP_SITEURL', 'https://bobby-shop.com');
 define('WP_MEMORY_LIMIT', '4096M');
 define('WP_MAX_MEMORY_LIMIT', '4G');
 define( 'FS_METHOD', 'direct' );
